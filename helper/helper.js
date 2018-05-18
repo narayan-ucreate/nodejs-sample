@@ -1,9 +1,11 @@
-exports.apiResponse = function (response, statusCode, message, results, errors) {
+exports.apiResponse = function (res, statusCode, message, results, errors) {
     var data = { message: message, errors: errors }
     if (results) {
         data = { message: message, results: results, errors: errors };
     }
-    response.status(statusCode).json(data);
+    res.status(statusCode);
+    return data;
+
 };
 exports.preparedValidationMessage = function (validations) {
     var finalResults = [];
