@@ -5,14 +5,30 @@ module.exports = (sequelize, DataTypes) => {
     firstName: {
       type: DataTypes.STRING,
       validate: {
-        isEmail: {
-          args: true,
-          msg: 'The email you entered is invalid or is already in our system.'
-        },
+        notEmpty: {
+          msg: 'first name is a required field'
+        }
       }
     },
-    lastName: DataTypes.STRING,
-    email: DataTypes.STRING
+    lastName: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'last name is a required field'
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'email is a required field'
+        }, isEmail: {
+          args: true,
+          msg: 'The email you entered is invalid or is already in our system.'
+        }
+      }
+    },
   }, {});
   User.associate = function (models) {
     // associations can be defined here

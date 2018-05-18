@@ -25,9 +25,10 @@ describe('Users', () => {
     });
   });
 
+
   describe('/GET/:id users specific user info', () => {
     it('it should GET specific user info', (done) => {
-      var UserInfo = models.User.build({ firstName: 'narayan@a.com', lastName: 'sharma', 'email': 'ab@gmail.com' })
+      var UserInfo = models.User.build({ firstName: 'narayan', lastName: 'sharma', 'email': 'ab@gmail.com' })
         .save()
         .then(function (results) {
           chai.request(server)
@@ -44,7 +45,7 @@ describe('Users', () => {
   /*
   * Test the /POST route
   */
-  describe('/POST users', () => {
+  describe('/POST users store user information ', () => {
       it('it should not POST a users without pages field', (done) => {
         let users = { firstName: 'narayan', lastName: 'sharma', 'email': 'ab@gmail.com' }      
         chai.request(server)
