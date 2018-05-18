@@ -1,0 +1,28 @@
+<a href="/users/create" style="float:right;">Create New</a>
+<ul class="people_list">
+  User List
+  <table style="width:100%; border:1px solid;" border="1">
+    <thead style="text-align:left">
+      <th>First Name</th>
+      <th>Last name</th>
+      <th>Email</th>
+    </thead>
+    <tbody>
+      {{#each users}}
+      <tr style="border:1px solid;">
+        <td>
+          {{this.firstName}}
+        </td>
+        <td>
+          {{this.lastName}}
+        </td>
+        <td>
+          {{this.email}}
+        </td>
+      </tr>
+
+      {{/each}}
+    </tbody>
+  </table>
+
+</ul>
