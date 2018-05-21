@@ -9,4 +9,6 @@ exports.index = async function (req, res) {
     res.send( await userComponent.show(req, res)).end();
 }, exports.update = async function (req, res) {
     res.send( await userComponent.update(req, res)).end();
+}, exports.register = async function(req, res) {
+    
 }
