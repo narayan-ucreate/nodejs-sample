@@ -4,7 +4,6 @@ This project is for those who want to start fresh project from beginning and gui
 ## GETTING STARTED
 
 * INSTALLATION
-Before start with nodejs project you must install following things
 
 ```
 sudo apt-get install -y nodejs
