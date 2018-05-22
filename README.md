@@ -1,12 +1,87 @@
 # nodejs-sample
+This project is for those who want to start fresh project from beginning and guide them to what are the things they must be follow.
+
+## GETTING STARTED
+
+* INSTALLATION
+Before start with nodejs project you must install following things
+
+```
+sudo apt-get install -y nodejs
+
+```
+* Clone repo 
+* npm install (for install dependency) 
 
 
-One Paragraph of project description goes here
+## Basic Knowledge of Sequelize before start
+* Migrations
+Just like you use Git / SVN to manage changes in your source code, you can use migrations to keep track of changes to the database. With migrations you can transfer your existing database into another state and vice versa: Those state transitions are saved in migration files, which describe how to get to the new state and how to revert the changes in order to get back to the old state.
+* Installation Sequelize
+
+```
+npm install --save sequelize
+# And one of the following:
+$ npm install --save pg pg-hstore
+$ npm install --save mysql2
+$ npm install --save sqlite3
+$ npm install --save tedious // MSSQL
+
+```
+
+* Installing CLI
+
+```
+npm install --save sequelize-cli
+
+node_modules/.bin/sequelize init
+```
+it will create following things
+
+
+    - config, contains config file, which tells CLI how to connect with database
+    - models, contains all models for your project
+    - migrations, contains all migration files
+    - seeders, contains all seed files
+
+* Configuration
+Before start with database change your configuration as per your requirments from config/config.json file
+
+* Creating Model & migration
+```
+node_modules/.bin/sequelize model:generate --name User --attributes firstName:string,lastName:string,email:string
+
+```
+* Running Migration
+```
+node_modules/.bin/sequelize db:migrate
+
+```
+
+* Undoing Migration
+```
+node_modules/.bin/sequelize db:migrate:undo
+
+```
+
+* Create First Seed
+```
+node_modules/.bin/sequelize seed:generate --name demo-user
+
+```
+
+
+* Running Seed
+```
+node_modules/.bin/sequelize db:seed:all
+
+```
+
+
+
 
 ## CODE STYLE GUIDELINE
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
+The instructions is given below that every developer must follow before start writing code on nodejs.
 ### Define Objects
 
 * Use the literal syntax for object creation.
